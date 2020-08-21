@@ -1,0 +1,29 @@
+{
+    "name": "@adamdehaven/vuepress-plugin-custom-tooltip",
+    "version": "0.1.0",
+    "description": "A customizable, reusable tooltip component for VuePress. This plugin is a VuePress wrapper for @adamdehaven/vue-custom-tooltip.",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/adamdehaven/vuepress-plugin-custom-tooltip.git"
+    },
+    "keywords": [
+        "VuePress",
+        "tooltip",
+        "component",
+        "plugin"
+    ],
+    "author": "Adam DeHaven <adam@dehaven.org> (https://www.adamdehaven.com/)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/adamdehaven/vuepress-plugin-custom-tooltip/issues"
+    },
+    "homepage": "https://github.com/adamdehaven/vuepress-plugin-custom-tooltip#readme",
+    "scripts": {
+        "version": "git add -A",
+        "postversion": "git push && git push --tags"
+    },
+    "dependencies": {
+        "@adamdehaven/vue-custom-tooltip": "^1.1.3"
+    }
+}
