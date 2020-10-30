@@ -6,7 +6,7 @@ A reusable tooltip component for Vue.js projects. This plugin is a VuePress wrap
 
 ## Installation
 
-``` sh
+```sh
 # With npm
 npm install @adamdehaven/vuepress-plugin-custom-tooltip
 
@@ -16,83 +16,86 @@ yarn add @adamdehaven/vuepress-plugin-custom-tooltip
 
 You can use the plugin by installing it in your `.vuepress/config.js` file, as shown here:
 
-``` js
+```js
 // .vuepress/config.js
 module.exports = {
-    // Install the plugin using ONE of the options below:
-    // --------------------------------------------------
+  // Install the plugin using ONE of the options below:
+  // --------------------------------------------------
 
-    // 1. Install with default options
-    plugins: [
-        '@adamdehaven/vuepress-plugin-custom-tooltip',
+  // 1. Install with default options
+  plugins: ['@adamdehaven/vuepress-plugin-custom-tooltip'],
+
+  // ===== OR  =====
+
+  // 2. Install with custom options (defaults shown)
+  plugins: [
+    [
+      '@adamdehaven/vuepress-plugin-custom-tooltip',
+      {
+        name: 'VueCustomTooltip',
+        color: '#fff',
+        background: '#000',
+        borderRadius: 12,
+        fontWeight: 400,
+      },
     ],
-
-    // ===== OR  =====
-
-    // 2. Install with custom options (defaults shown)
-    plugins: [
-        ['@adamdehaven/vuepress-plugin-custom-tooltip', {
-            name: 'VueCustomTooltip',
-            color: '#fff',
-            background: '#000',
-            borderRadius: 12,
-            fontWeight: 400,
-        }],
-    ],
+  ],
 }
 ```
 
 Alternatively, if you are using a theme, you may install in your `.vuepress/theme/index.js` file:
 
-``` js
+```js
 // .vuepress/theme/index.js
 module.exports = (options, ctx) => {
-    return {
-        // Install the plugin using ONE of the options below:
-        // --------------------------------------------------
+  return {
+    // Install the plugin using ONE of the options below:
+    // --------------------------------------------------
 
-        // 1. Install with default options
-        plugins: [
-            '@adamdehaven/vuepress-plugin-custom-tooltip',
-        ],
+    // 1. Install with default options
+    plugins: ['@adamdehaven/vuepress-plugin-custom-tooltip'],
 
-        // ===== OR  =====
+    // ===== OR  =====
 
-        // 2. Install with custom options (defaults shown)
-        plugins: [
-            ['@adamdehaven/vuepress-plugin-custom-tooltip', {
-                name: 'VueCustomTooltip',
-                color: '#fff',
-                background: '#000',
-                borderRadius: 12,
-                fontWeight: 400,
-            }],
-        ],
-    }
+    // 2. Install with custom options (defaults shown)
+    plugins: [
+      [
+        '@adamdehaven/vuepress-plugin-custom-tooltip',
+        {
+          name: 'VueCustomTooltip',
+          color: '#fff',
+          background: '#000',
+          borderRadius: 12,
+          fontWeight: 400,
+        },
+      ],
+    ],
+  }
 }
 ```
 
 ## Usage
 
-``` html
+```html
 <!-- Basic -->
 What is <VueCustomTooltip label="This is a tooltip">a tooltip</VueCustomTooltip>?
 
 <!-- With Props -->
-What is <VueCustomTooltip label="This is a tooltip" position="is-bottom" abbreviation sticky>a tooltip</VueCustomTooltip>?
+What is
+<VueCustomTooltip label="This is a tooltip" position="is-bottom" abbreviation sticky>a tooltip</VueCustomTooltip>?
 
 <!-- With element(s) -->
 <VueCustomTooltip label="View @adamdehaven on Twitter">
-    <a class="button" href="https://twitter.com/adamdehaven">
-        <span class="icon icon-twitter"></span>
-        <span>Twitter</span>
-    </a>
+  <a class="button" href="https://twitter.com/adamdehaven">
+    <span class="icon icon-twitter"></span>
+    <span>Twitter</span>
+  </a>
 </VueCustomTooltip>
 ```
 
 ## Options
 
-Pass any of the options listed below to `Vue.use(VueCustomTooltip, {...})` to customize the plugin for your project *(not available with [in-component installation](#in-component-install))*.
+Pass any of the options listed below to `Vue.use(VueCustomTooltip, {...})` to customize the plugin for your project _(not available with [in-component installation](#in-component-install))_.
 
 > **A note on options tied to CSS properties**
 >
@@ -105,15 +108,15 @@ Pass any of the options listed below to `Vue.use(VueCustomTooltip, {...})` to cu
 
 Customize the name of the component you will use in your project. **Camel-case names are preferred**, as this allows for camel-case or kebob-case usage within your project.
 
-``` js
+```js
 Vue.use(VueCustomTooltip, {
-    name: 'SuperCoolTooltip', // camel-case preferred
+  name: 'SuperCoolTooltip', // camel-case preferred
 })
 ```
 
-If you registered the name using camel-case, you can reference the tooltip component via camel-case *or* kebob-case:
+If you registered the name using camel-case, you can reference the tooltip component via camel-case _or_ kebob-case:
 
-``` html
+```html
 <!-- Default name (user did not pass the 'name' option) -->
 
 <!-- camel-case -->
@@ -136,9 +139,9 @@ Nice <super-cool-tooltip label="Neat!">tooltip</super-cool-tooltip>!
 
 Customize the color of the text displayed in the tooltip.
 
-``` js
+```js
 Vue.use(VueCustomTooltip, {
-    color: '#c1403d', // 3 or 6 digit HEX color, including a leading hash (#)
+  color: '#c1403d', // 3 or 6 digit HEX color, including a leading hash (#)
 })
 ```
 
@@ -149,9 +152,9 @@ Vue.use(VueCustomTooltip, {
 
 Customize the background color (and the `underlined` text color) of the tooltip.
 
-``` js
+```js
 Vue.use(VueCustomTooltip, {
-    background: '#1b2735', // 3 or 6 digit HEX color, including a leading hash (#)
+  background: '#1b2735', // 3 or 6 digit HEX color, including a leading hash (#)
 })
 ```
 
@@ -162,9 +165,9 @@ Vue.use(VueCustomTooltip, {
 
 Customize the border-radius of the tooltip. Must be an integer.
 
-``` js
+```js
 Vue.use(VueCustomTooltip, {
-    borderRadius: 4,
+  borderRadius: 4,
 })
 ```
 
@@ -175,9 +178,9 @@ Vue.use(VueCustomTooltip, {
 
 Customize the font-weight of the tooltip text. Must be an integer that is a multiple of 100, between 100 - 900.
 
-``` js
+```js
 Vue.use(VueCustomTooltip, {
-    fontWeight: 700,
+  fontWeight: 700,
 })
 ```
 
@@ -187,13 +190,13 @@ In addition to the [Plugin Options](#options) above, you may also pass props to 
 
 Props that accept a Boolean value may be passed simply by adding the attribute to the component tag, if a `true` value is desired. See the `sticky` example here:
 
-``` html
+```html
 <VueCustomTooltip label="Tooltip" sticky>text/element</VueCustomTooltip>
 ```
 
 All other props may be passed as normal attributes (if the corresponding value is a String, like the `label` prop, shown above) or with `v-bind` directives, as shown here:
 
-``` html
+```html
 <VueCustomTooltip :label="element.helpText" :sticky="false">text/element</VueCustomTooltip>
 ```
 
@@ -230,7 +233,7 @@ The position of the tooltip in relation to the text/element it is surrounding.
 
 Swaps out the component's standard `<span>` element with a semantically-correct `<abbr>` element, and sets the [`underlined`](#underlined) prop to `true`. This is useful when adding a tooltip to text within a page's content where you want to provide additional context to a word or phrase, or provide a definition of a word or acronym.
 
-``` html
+```html
 VuePress pages are served as an <VueCustomTooltip label="Single Page Application" abbreviation>SPA</VueCustomTooltip>.
 ```
 
@@ -267,9 +270,11 @@ The width of the tooltip, if the [`multiline`](#multiline) prop is set to `true`
 
 Just like any other Vue component, you can add classes or styles directly to the component tag that will be applied to the rendered `<span>` tag (or `<abbr>` tag, if `abbreviation` is set to `true`).
 
-``` html
+```html
 <!-- Tooltip component with custom classes and styles -->
-<VueCustomTooltip class="your-class" :class="{ 'dynamic-class': isDynamic }" :style="{ display: 'inline' }" label="Neat">text</VueCustomTooltip>
+<VueCustomTooltip class="your-class" :class="{ 'dynamic-class': isDynamic }" :style="{ display: 'inline' }" label="Neat"
+  >text</VueCustomTooltip
+>
 ```
 
 This is extremely helpful if you want to extend functionality or tooltip styles within your project, which allows you to tweak things like the display behavior of the tooltip element.
