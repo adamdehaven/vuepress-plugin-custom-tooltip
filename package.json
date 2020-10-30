@@ -1,6 +1,6 @@
 {
   "name": "@adamdehaven/vuepress-plugin-custom-tooltip",
-  "version": "1.1.1",
+  "version": "1.1.0",
   "description": "A customizable, reusable tooltip component for VuePress. This plugin is a VuePress wrapper for @adamdehaven/vue-custom-tooltip.",
   "main": "index.js",
   "repository": {
@@ -26,7 +26,7 @@
     "prettier:fix": "prettier --write ."
   },
   "dependencies": {
-    "@adamdehaven/vue-custom-tooltip": "^1.2.0"
+    "@adamdehaven/vue-custom-tooltip": "^1.2.1"
   },
   "devDependencies": {
     "prettier": "2.1.2"
