@@ -35,7 +35,7 @@ module.exports = {
         name: 'VueCustomTooltip',
         color: '#fff',
         background: '#000',
-        borderRadius: 12,
+        borderRadius: 100,
         fontWeight: 400,
       },
     ],
@@ -65,7 +65,7 @@ module.exports = (options, ctx) => {
           name: 'VueCustomTooltip',
           color: '#fff',
           background: '#000',
-          borderRadius: 12,
+          borderRadius: 100,
           fontWeight: 400,
         },
       ],
@@ -161,7 +161,7 @@ Vue.use(VueCustomTooltip, {
 ### `borderRadius`
 
 - Type: `Number`
-- Default: `12`
+- Default: `100`
 
 Customize the border-radius of the tooltip. Must be an integer.
 
