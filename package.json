@@ -31,7 +31,7 @@
     }
   },
   "dependencies": {
-    "@adamdehaven/vue-custom-tooltip": "^1.4.2"
+    "@adamdehaven/vue-custom-tooltip": "^1.4.3"
   },
   "devDependencies": {
     "husky": "4",
